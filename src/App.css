@@ -1,0 +1,32 @@
+@import "tailwindcss";
+* {
+    scroll-behavior: smooth;
+  }
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 2vw;  /* Adjust the size */
+  height: 2vw;  /* Adjust the size */
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  pointer-events: none;
+}
+
+/* Cursor appears when hovering over a product card */
+.product-card:hover ~ .custom-cursor {
+  opacity: 1;
+  transform: scale(1.5) translate(-50%, -50%);
+}
+
+.product-card:hover .custom-cursor {
+  opacity: 1;
+  transform: scale(1.5) translate(-50%, -50%);
+}

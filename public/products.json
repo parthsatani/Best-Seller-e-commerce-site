@@ -1,0 +1,99 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 499,
+      "image": "/images/headphone.png",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 20000,
+      "image": "/images/phone.png",
+      "description": "Latest model smartphone with an advanced camera system.",
+      "category": "Mobiles"
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "price": 999,
+      "image": "/images/shoes.png",
+      "description": "Comfortable running shoes for daily use.best color and best sales shoes",
+      "category": "Fashion"
+    },
+    {
+      "id": 4,
+      "name": "Watch",
+      "price": 329,
+      "image": "/images/watch.png",
+      "description": "TIMEWEAR Analog New Dial Day Date Functioning Leather Strap Watch for Men",
+      "category": "Fashion"
+    },
+    {
+      "id": 5,
+      "name": "Sandwich Macker",
+      "price": 2000,
+      "image": "/images/sandwich.png",
+      "description": "Wipro Elato BS202 1000 Watt Ceramic Grill Sandwich Maker, Scratch Resistant.",
+      "category": "Electronics"
+    },
+    {
+      "id": 6,
+      "name": "Pressure Cooker",
+      "price": 2000,
+      "image": "/images/unnamed.png",
+      "description": "Hawkins 3.5 Litre Contura Black Pressure Cooker, Hard Anodised Inner Lid Cooker.",
+      "category": "Fashion"
+    },
+    {
+      "id": 7,
+      "name": "Bracelet",
+      "price": 100,
+      "image": "/images/bracelet.png",
+      "description": "White Diamond Bracelet, fashinable and stylist bracelet.",
+      "category": "Fashion"
+    },
+    {
+      "id": 8,
+      "name": "Iphome",
+      "price": 135900,
+      "image": "/images/mobile1.png",
+      "description": "iPhone 16 Pro Max 256 GB: 5G Mobile Phone with Camera Contro.",
+      "category": "Mobiles"
+    },
+    {
+      "id": 9,
+      "name": "Mouce",
+      "price": 399,
+      "image": "/images/mouce.png",
+      "description": "Comfort Wired USB Mouse,3-Button,1000 DPI Optical Sensor,Plug & Play.",
+      "category": "Electronics"
+    },
+    {
+      "id": 10,
+      "name": "CPU",
+      "price": 16500,
+      "image": "/images/cpu.png",
+      "description": "DesktopPc CPU/HD2000 Graphics/16GBRam/HDMI/VGA/Ethernet/RGB.",
+      "category": "Electronics"
+    },
+    {
+      "id": 11,
+      "name": "Nike Shoes",
+      "price": 2500,
+      "image": "/images/shoes1.png",
+      "description": "NIKE Mens Revolution Running Shoes 7-Black/University Red-White.",
+      "category": "Fashion"
+    },
+    {
+      "id": 12,
+      "name": "Controler",
+      "price": 1999,
+      "image": "/images/controler.png",
+      "description": "Wireless Controller for PC, Cloud Gaming and Mobile, Fortnite Edition.",
+      "category": "Electronics"
+    }
+  ]
+  
