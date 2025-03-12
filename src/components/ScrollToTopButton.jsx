@@ -4,9 +4,9 @@ const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // This function checks the scroll position
+    
     const handleScroll = () => {
-      // Show the button after scrolling down 300px
+    
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -14,19 +14,19 @@ const ScrollToTopButton = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll); // Add event listener for scroll
-    return () => window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+    window.addEventListener('scroll', handleScroll); 
+    return () => window.removeEventListener('scroll', handleScroll); 
   }, []);
 
-  // Function to scroll to the top
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Smooth scroll
+      behavior: 'smooth', 
     });
   };
 
-  // Only render the button if it's visible
+  
   return (
     isVisible && (
       <button
