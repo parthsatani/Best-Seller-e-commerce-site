@@ -17,18 +17,18 @@ const Home = () => {
       .catch((error) => console.error("Error fetching data:", error));
 
     const handleMouseMove = (e) => {
-      // Move the custom cursor with GSAP, aligning it with the mouse
+    
       gsap.to(cursorRef.current, {
-        x: e.clientX - cursorRef.current.offsetWidth / 2-20, // center the cursor on the pointer
-        y: e.clientY - cursorRef.current.offsetHeight / 2-100, // center the cursor on the pointer
-        duration: 0.2, // Smooth transition
-        ease: "power2.out", // ease-out effect for smoothness
+        x: e.clientX - cursorRef.current.offsetWidth / 2-20, 
+        y: e.clientY - cursorRef.current.offsetHeight / 2-100, 
+        duration: 0.2, 
+        ease: "power2.out", 
       });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Cleanup on unmount
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
