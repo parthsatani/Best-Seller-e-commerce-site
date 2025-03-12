@@ -49,7 +49,7 @@ const Home = () => {
 
   return (
     <div className="max-w-10xl bg-[#EBE8DB] mx-auto p-6 relative">
-      {/* Custom GSAP Cursor */}
+
       <div
         ref={cursorRef}
         className="custom-cursor"
