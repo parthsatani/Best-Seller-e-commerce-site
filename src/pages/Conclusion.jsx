@@ -1,6 +1,5 @@
-// Conclusion.jsx
 import React from "react";
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa'; // Use these icons for Instagram and WhatsApp
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa'; 
 
 const Conclusion = () => {
   return (
@@ -27,7 +26,7 @@ const Conclusion = () => {
 
       <div className="text-center space-x-6 flex items-center justify-center">
         <a
-          href="https://www.instagram.com/your-instagram" // Replace with your Instagram URL
+          href="https://www.instagram.com/your-instagram" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-3xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FDCB82] rounded-lg hover:scale-105 transform transition duration-300"
@@ -36,7 +35,7 @@ const Conclusion = () => {
         </a>
 
         <a
-          href="https://wa.me/your-whatsapp-number" // Replace with your WhatsApp number link
+          href="https://wa.me/your-whatsapp-number" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-3xl bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-lg hover:scale-105 transform transition duration-300"
