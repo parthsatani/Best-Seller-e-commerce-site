@@ -21,12 +21,11 @@ const Login = () => {
       </button>
     </form>
     <div className="mt-6 flex justify-between">
-    {/* Forgot Password Link */}
+    
     <div className="text-center mt-4 mb-4 ">
       <button onClick={() => alert("Forgot Password placeholder")}><a href="#" className="text-black hover:underline">Forgot Password?</a>
     </button></div>
     
-    {/* Google Login Button */}
     
       <button
         onClick={() => alert("Google Login placeholder")}
