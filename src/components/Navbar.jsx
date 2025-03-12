@@ -16,7 +16,6 @@ const Navbar = () => {
           <Link to="/">Best-Seller</Link>
         </h1>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-10">
           <li>
             <Link to="/" className="hover:text-black hover:font-bold hover:bg-gradient-to-r from-[#B03052] to-[#D76C82] p-2 pb-2.5 rounded-4xl">Home</Link>
@@ -35,7 +34,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Mobile Menu Icon */}
+        
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu}>
             <i className={`ri-menu-3-line text-3xl ${menuOpen ? "ri-close-line" : "ri-menu-3-line"}`}></i>
@@ -43,7 +42,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+     
       {menuOpen && (
         <div className="md:hidden bg-[#3D0301] text-white p-4">
           <ul className="space-y-4">
