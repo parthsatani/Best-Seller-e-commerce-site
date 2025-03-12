@@ -1,41 +1,41 @@
 import { useState, useEffect, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";  // Import useNavigate
+import { useParams, useNavigate } from "react-router-dom";  
 import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Get the product id from the URL
+  const { id } = useParams(); 
   const { addToCart } = useCart();
-  const navigate = useNavigate(); // Hook to handle navigation
+  const navigate = useNavigate(); 
   const [product, setProduct] = useState(null);
-  const [showForm, setShowForm] = useState(false); // State to control form visibility
+  const [showForm, setShowForm] = useState(false); 
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     address: "",
   });
-  const formRef = useRef(null); // Reference to scroll to the user info form
-  const paymentRef = useRef(null); // Reference to scroll to the payment form
-  const [showPayment, setShowPayment] = useState(false); // State for showing the payment form
-  const [paymentMethod, setPaymentMethod] = useState("card"); // Default payment method is 'card'
-  const [finalAmount, setFinalAmount] = useState(product?.price || 0); // Track the final amount including COD extra charges if applicable
+  const formRef = useRef(null); 
+  const paymentRef = useRef(null); 
+  const [showPayment, setShowPayment] = useState(false); 
+  const [paymentMethod, setPaymentMethod] = useState("card"); 
+  const [finalAmount, setFinalAmount] = useState(product?.price || 0); 
   const [bankingDetails, setBankingDetails] = useState({
     accountNumber: "",
-    ifscCode: "", // Added IFSC Code for bank payment
+    ifscCode: "", 
   });
   const [cardDetails, setCardDetails] = useState({
     cardNumber: "",
     expiryDate: "",
     cvv: "",
   });
-  const [productAdded, setProductAdded] = useState(false); // State to track if product is added to cart
+  const [productAdded, setProductAdded] = useState(false); 
 
   useEffect(() => {
-    fetch("/products.json") // Assuming your products.json is in the public directory
+    fetch("/products.json") 
       .then((response) => response.json())
       .then((data) => {
-        const foundProduct = data.find((prod) => prod.id === parseInt(id)); // Find the product by ID
+        const foundProduct = data.find((prod) => prod.id === parseInt(id)); 
         setProduct(foundProduct);
-        setFinalAmount(foundProduct?.price); // Set the initial price
+        setFinalAmount(foundProduct?.price); 
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, [id]);
@@ -50,9 +50,9 @@ const ProductDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowPayment(true); // Show payment options after form submission
+    setShowPayment(true); 
 
-    // Scroll to the payment section
+    
     paymentRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -60,11 +60,11 @@ const ProductDetails = () => {
     const method = e.target.value;
     setPaymentMethod(method);
 
-    // Apply ₹5 extra charge for COD
+    
     if (method === "cod") {
       setFinalAmount(product?.price + 5);
     } else {
-      setFinalAmount(product?.price); // No extra charge for card or banking
+      setFinalAmount(product?.price); 
     }
   };
 
@@ -88,7 +88,7 @@ const ProductDetails = () => {
     e.preventDefault();
     alert(`Payment processed! Total: ₹${finalAmount}`);
 
-    // Navigate to the Order List page with the product details and success message
+    
     navigate("/", {
       state: {
         product: product,
@@ -98,9 +98,9 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    addToCart(product); // Add product to the cart
-    setProductAdded(true); // Set the product added state to true
-    setTimeout(() => setProductAdded(false), 3000); // Hide the message after 3 seconds
+    addToCart(product); 
+    setProductAdded(true); 
+    setTimeout(() => setProductAdded(false), 3000); 
   };
 
   if (!product) {
@@ -124,22 +124,22 @@ const ProductDetails = () => {
             <p className="text-xl font-semibold mt-4">₹{product.price}</p>
             <div className="mt-6">
               <button
-                onClick={handleAddToCart} // Add product to cart
+                onClick={handleAddToCart} 
                 className="mt-4 bg-gradient-to-r from-[#3D1900] to-[#B01052] text-white px-4 py-2 rounded transition duration-200 hover:from-[#B01052] hover:to-[#3D1900]"
               >
                 Add to Cart
               </button>
               <button
                 onClick={() => {
-                  setShowForm(true); // Show the form when "Buy Now" is clicked
-                  formRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the form when clicked
+                  setShowForm(true); 
+                  formRef.current.scrollIntoView({ behavior: "smooth" }); 
                 }}
                 className="mt-4 ml-4 bg-gradient-to-r from-[#3D1900] to-[#e49409] text-white px-4 py-2 rounded transition duration-200 hover:from-[#e49409] hover:to-[#3D1900]"
               >
                 Buy Now
               </button>
             </div>
-            {/* Show Product Added Confirmation */}
+            
             {productAdded && (
               <div className="mt-4 text-red-900 font-semibold">
                 Product added to the cart!
@@ -148,7 +148,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Conditionally Render the User Information Form */}
+       
         {showForm && (
           <div ref={formRef} className="mt-8 mb-10 p-6 bg-gradient-to-tl to-[#ECDCBF] rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold">Enter Your Information</h3>
@@ -199,7 +199,7 @@ const ProductDetails = () => {
           </div>
         )}
 
-        {/* Conditionally Render the Payment Form */}
+        
         {showPayment && (
           <div ref={paymentRef} className="mt-8 p-6 bg-gradient-to-tl to-[#ECDCBF] rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold">Choose Payment Method</h3>
@@ -219,7 +219,7 @@ const ProductDetails = () => {
                 </label>
               </div>
 
-              {/* Debit/Credit Card Details */}
+             
               {paymentMethod === "card" && (
                 <div className="space-y-4">
                   <div>
@@ -258,7 +258,7 @@ const ProductDetails = () => {
                 </div>
               )}
 
-              {/* Banking Details */}
+       
               {paymentMethod === "banking" && (
                 <div className="space-y-4">
                   <div>
@@ -286,7 +286,7 @@ const ProductDetails = () => {
                 </div>
               )}
 
-              {/* Cash on Delivery Option */}
+             
               <div className="flex items-center">
                 <input
                   type="radio"
@@ -302,7 +302,7 @@ const ProductDetails = () => {
                 </label>
               </div>
 
-              {/* Display Final Amount */}
+              
               <p className="text-lg font-semibold mt-4">Final Amount: ₹{finalAmount}</p>
 
               <div className="mt-4 flex justify-end">
