@@ -1,4 +1,3 @@
-// LoadingPageDesktop.jsx
 import React, { useEffect } from "react";
 import gsap from "gsap";
 
