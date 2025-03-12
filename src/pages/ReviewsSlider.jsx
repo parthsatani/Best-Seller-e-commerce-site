@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "react-slick"; // Slick carousel component for the slider
+import Slider from "react-slick"; 
 
 const reviews = [
   {
@@ -83,7 +83,7 @@ const ReviewsSlider = () => {
     autoplaySpeed: 3000, 
     slidesToShow: 1, 
     slidesToScroll: 1,
-    cssEase: 'ease-in-out',  // Adds smooth transition
+    cssEase: 'ease-in-out', 
     responsive: [
       {
         breakpoint: 768,
@@ -109,8 +109,8 @@ const ReviewsSlider = () => {
             key={review.id}
             className="p-10 bg-gradient-to-br to-[#e0cca7] rounded-lg shadow-md flex justify-center items-center"
             style={{
-              height: "300px", // Fixed height to create square slides
-              width: "300px",  // Fixed width to create square slides
+              height: "300px", 
+              width: "300px",  
             }}
           >
             <div className="flex flex-col justify-center items-center">
