@@ -3,11 +3,11 @@
     scroll-behavior: smooth;
   }
 
-/* Custom Cursor */
+
 .custom-cursor {
   position: fixed;
-  width: 2vw;  /* Adjust the size */
-  height: 2vw;  /* Adjust the size */
+  width: 2vw;  
+  height: 2vw;  
   background: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   opacity: 0;
@@ -20,7 +20,7 @@
   pointer-events: none;
 }
 
-/* Cursor appears when hovering over a product card */
+
 .product-card:hover ~ .custom-cursor {
   opacity: 1;
   transform: scale(1.5) translate(-50%, -50%);
